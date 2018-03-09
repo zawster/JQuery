@@ -1,0 +1,22 @@
+[
+	{
+		"firstName":"Muhammad Ahsan",
+		"Department":"BS CS",
+		"email":"p176142"
+	},
+	{
+		"firstName":"Muhammad Hamza",
+		"Department":"BS EE",
+		"email":"p176133"
+	},
+	{
+		"firstName":"Muhammad Ishaq",
+		"Department":"BS IT",
+		"email":"p176332"
+	},
+	{
+		"firstName":"Muhammad Talha",
+		"Department":"BS SE",
+		"email":"p173467"
+	}
+]

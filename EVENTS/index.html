@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Crash Course | Selectors</title>
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<style>
+		body {
+			font-size: 17px;
+			font-family: monotype-corsiva;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:#333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px red solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width: 90%;
+			background-color: silver;
+			margin: auto;
+			padding:10px;
+			border:2px #333 solid;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1>Jquery__crash__course</h1><h3>MOUSE__EVENTS</h3>
+</header>
+	<div id="container">
+		<button id="btn1">Button 1</button>
+		<button id="btn2">Button 2</button>
+		<p id="para1"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><hr>
+		<div align="center">
+		<h1 id="coords"></h1><hr>
+		<form id="form">
+			<label>Name:</label>
+			<input type="text" name="name" id="name"><br>
+			<label>Email:</label>
+			<input type="email" name="email" id="email"><br>
+			<label>Gender</label>
+			<select id="gender" name="gender">
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+				<option value="none">Khawaja_Sara</option>
+			</select><br>
+			<input type="submit" value="submit">
+
+		</form></div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			/*
+			$('#btn1').click(function(){
+			alert('Button1 is Clicked!');
+			}); 
+		$('#btn2').on('click',function(){
+			alert('Button2 is Clicked!');
+			});*/
+		/*$('#btn1').on('click',function(){
+			//$('#para1').hide();
+			$('#para1').toggle()
+		});
+		$('#btn2').on('click',function(){
+			$('#para1').show();
+		});
+		$('#btn1').dblclick(function(){
+			$('#para1').toggle();		
+		});
+		$('#btn1').hover(function(){
+			$('#para1').toggle();
+		});
+		$('#btn1').on('mouseenter',function(){
+			$('#para1').toggle();
+		});
+		$('#btn1').on('mouseleave',function(){
+			$('#para1').toggle();
+		});
+		$('#btn1').on('mousemove',function(){
+			$('#para1').toggle();
+		});
+		$('#btn1').on('mousedown',function(){
+			$('#para1').toggle();
+		});
+		$('#btn1').on('mouseup',function(){
+			$('#para1').toggle();
+		});
+		$('#btn1').click(function(e){
+			//console.log(e);
+			//alert(e.currentTarget.id);
+			//alert(e.currentTarget.innerHTML);
+			//alert(e.currentTarget.outerHTML);
+		});*/
+		$(document).on('mousemove',function(e){
+			//console.log('Coords: Y:'+e.clientY+" X: "+e.clientX); 
+			$('#coords').html('Coords: Y:'+e.clientY+"   Coords X: "+e.clientX); 
+		});
+/////	FORMS EVENTS   ///////////////////////
+
+		$('input').focus(function(){
+			//alert('Focus');
+			//$('#name').css('background','pink');
+			//$(this).css('background','pink');
+		});
+		$('input').blur(function(){
+			//$(this).css('background','white');
+		});
+		$('input').keyup(function(e){
+			//console.log('keyup');
+			///console.log(e.target.value);
+		});
+		$('select#gender').change(function(e ){
+			//alert(e.target.value);
+		});
+		$('#form').submit(function(e){
+		//	e.preventDefault();
+		//	var name=$('input#name').val();
+		//	console.log(name);
+		});
+
+	});
+	</script>
+</body>
+</html>

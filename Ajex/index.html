@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Crash Course | DOM Manipulation </title>
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<style>
+		body {
+			font-size: 17px;
+			font-family: monotype-corsiva;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:#333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px red solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width: 90%;
+			background-color: silver;
+			margin: auto;
+			padding:10px;
+			border:2px #333 solid;
+		}
+		#box{
+			background: #333;
+			color: #fff;
+			width: 500px;
+			height: 90px;
+			padding: 40px;
+			text-align: center;
+		}
+		#box2{
+			background-color: red;
+			color: white;
+			height: 90px;
+			width: 120px;
+			position: relative;
+			text-align: center;
+			padding-top:50px;
+			border-radius: 10px;
+			
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1>Jquery__crash__course</h1><h2> Ajex </h2>
+</header>
+	<div id="container">
+		<div id="result">
+		</div>
+		<ul id="use">	
+		</ul>
+		<form id="postForm" action="https://jsonplaceholder.typicode.com/posts">
+			<input type="text" placeholder="Title"><br>
+			<textarea placeholder="Body" id="body"></textarea><br>
+			<input type="submit" name="Submit">
+
+			
+		</form>
+	</div>
+	<script>
+		$(document).ready(function(){
+			/*
+			$('#result').load('test.html',function(responseTxt,statusTxt,xhr){
+				if(statusTxt == "success"){
+					alert('It went fine:');}
+				else if(statusTxt == "error"){
+					alert("Error:" +xhr.statusTxt);
+				}
+			});
+			*/
+			/*$.get('test.html',function(data){
+				$('#result').html(data);
+			});*/
+/*				$.getJSON('users.json',function(data){
+				$.each(data,function(i,user){
+					$('ul#use').append('<li>'+user.firstName+'  having email:'+user.email+'</li>');
+				});
+			});*/
+/*			$.ajax({
+				method:'GET',
+				url:'https://jsonplaceholder.typicode.com/posts',
+				dataType:'json'
+			}).done(function(data){
+				//console.log(data);
+				$.map(data,function(post){
+					$('#result').append('<h3>'+post.title+'</h3><p>'+post.body+'</p>');
+				});
+			});		*/
+
+/////			 POST REQUEST			/////////
+
+			 $('#postForm').submit(function(e){
+			 	e.preventDefault();
+			 	var title=$('#title').val();
+			 	var body=$('#body').val();
+			 	var url = $(this).attr('action');
+  
+			 	$.post(url,{title:title,body:body}).done(function(data){
+			 			console.log('post saved');
+			 			console.log(data);
+			 		}); 
+			 });
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Crash Course | Selectors</title>
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<style>
+		body {
+			font-size: 17px;
+			font-family: monotype-corsiva;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:#333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px red solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width: 90%;
+			margin: auto;
+			padding:10px;
+			border:2px #333 solid;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1>Jquery crash course</h1><h3>SELECTORS</h3>
+</header>
+<div id="container">
+		<h1 id="heading1">Heading One</h1>
+		<p id="para1">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco <span>laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute </span>irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.
+		</p>
+		<h1 class="heading2">Heading Two</h1>
+		<p class="para2">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco <span>laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute </span>irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.
+		</p>
+		<ul id="list">
+			<li>List Items</li><li>List Items</li><li>List Items</li>
+			<li>List Items</li><li>List Items</li><li>List Items</li>
+			<li>List Items</li><li>List Items</li><li>List Items</li>
+		</ul>
+		<input type="button" value="Button">
+		<input type="submit" value="Submit">
+		<input type="text" >
+
+		<a href="http://google.com" target="blank">Google</a>
+		<a href="http://yahoo.com" target="blank">Yahoo</a>
+</div>
+<div style="padding-bottom: 50em;"></div>
+<script>
+	//SELECTORS
+//	$('h1').hide();
+//	$('h1#heading1').hide();  
+//	$('h1.heading2').hide();
+//	$('p span').css('color','red');
+	$('ul#list li:first').css('color','red')	;
+	$('ul#list li:last').css('color','green');
+	$('ul#list li:even').css('background-color','pink');
+	$('ul#list li:odd').css('background-color','gray');
+	$('ul#list li:nth-child(3n)').css('background-color','yellow');
+	// BUTTONS
+//	$(':button').hide();
+	// LINKS
+	$('[href]').css('color','yello');
+	$('a[href="http://yahoo.com"]').css('color','black');
+	//$('*').hide()
+</script>
+</body>
+</html>

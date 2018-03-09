@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Crash Course | DOM Manipulation </title>
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<style>
+		body {
+			font-size: 17px;
+			font-family: monotype-corsiva;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:#333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px red solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width: 90%;
+			background-color: silver;
+			margin: auto;
+			padding:10px;
+			border:2px #333 solid;
+		}
+		#box{
+			background: #333;
+			color: #fff;
+			width: 500px;
+			height: 90px;
+			padding: 40px;
+			text-align: center;
+		}
+		#box2{
+			background-color: red;
+			color: white;
+			height: 90px;
+			width: 120px;
+			position: relative;
+			text-align: center;
+			padding-top:50px;
+			border-radius: 10px;
+			
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1>Jquery__crash__course</h1><h2>Effects  &  Animation</h2>
+</header>
+	<div id="container">
+		<button id="btnfadeout">Fade Out</button>
+		<button id="btnfadein">Fade In</button>
+		<button id="btnfadeTog">Fade Toggle</button>
+		<button id="btnfadeStop">Fade Stop</button>
+			<hr>
+		<button id="btnSlideUp">Slide Up</button>
+		<button id="btnSlideDown">Slide Down</button>
+		<button id="btnSlideTog">Slide Tog</button>
+		<button id="btnSlideStop">Stop Slide</button>
+			<hr>
+		<div id="box"><h1>I Love Pakistan</h1></div>
+			<hr>
+		<button id="moveRight">Move Right</button>
+		<button id="moveLeft">Move Left</button>
+		<button id="moveArround">Move Arround</button><hr>
+		<div id="box2">I Love Pakistan</div>
+
+
+
+
+		<div style="padding-bottom: 40em"></div>
+	</div>
+	<!-- JQUERY  -->
+	<script>
+		$(document).ready(function(){
+		//        	FADING		////////////////////////////////			Fadding
+			$('#btnfadeout').click(function(){
+				$('#box').fadeOut(3000);
+			});
+			$('#btnfadein').click(function(){
+				$('#box').fadeIn(3000);
+			});
+			$('#btnfadeTog').click(function(){
+				$('#box').fadeToggle(1000);
+			});
+			$('#btnfadeStop').click(function(){
+				$('#box').stop();
+			});
+		//   `		SLIDING		///////////////////////////////////				sliding
+			$('#btnSlideUp').click(function(){
+				$('#box').slideUp(3000);
+			});
+			$('#btnSlideDown').click(function(){
+				$('#box').slideDown(2000);
+			});
+			$('#btnSlideTog').click(function(){
+				$('#box').slideToggle(2000);
+			});
+			$('#btnSlideStop').click(function(){
+				$('#box').stop(); 
+			});
+			////////////////////////////////////////////          Animation
+
+			$('#moveRight').click(function(){
+				$('#box2').animate({
+					left:500,
+					height:'300px',
+					width:'400px',
+					cpacity:'0.5'
+				});
+			});
+			$('#moveLeft').click(function(){
+				$('#box2').animate({
+					left :0,
+					height:'100px',
+					width:'150px',
+					cpacity:'1'
+				});	
+			});
+			$('#moveArround').click(function(){
+				var box=$('#box2');
+				box.animate({
+					left:900
+				});
+				box.animate({
+					top:400
+				});
+				box.animate({
+					left:0,
+					top:400
+				});
+				box.animate({
+					left:0,
+					top:0
+				});
+			});
+		});
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

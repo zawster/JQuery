@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Crash Course | DOM Manipulation </title>
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<style>
+		body {
+			font-size: 17px;
+			font-family: monotype-corsiva;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:#333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px red solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width: 90%;
+			background-color: silver;
+			margin: auto;
+			padding:10px;
+			border:2px #333 solid;
+		}
+		.myClass{
+			color: white;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1>Jquery__crash__course</h1><h3>DOM__Manipulation</h3>
+</header>
+	<div id="container">
+		<button id="btn1">Button 1</button>
+		<p class="para1">This is my first paragraph</p>
+		<p class="para2">This is my second paragraph</p>
+		<div id="myDiv"></div>
+		<input type="text" id="newItem">
+		<ul id="list">
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+			<li>List item 4</li>
+		</ul>
+		<a href="http://yahoo.com">Yahoo</a>
+		<ol id="users">
+			
+		</ol>
+		
+	</div>
+	<script>
+		$(document).ready(function(){
+			//$('p.para1').css('color','red');
+			//$('p.para1').css({color:'white',background:'green'});
+			//$('p.para2').addClass('myClass');
+			//$('p.para2').removeClass('myClass');
+			//$('#btn1').click(function(){
+			//$('p.para2').toggleClass('myClass');
+			//});
+			//$('#myDiv').text('Hello World');
+			//$('#myDiv').html('<h2>Hello World</h2>');
+			//alert($('#myDiv').text());
+			//$('ul').append('<li>append list item</li>');			
+			//$('ul').prepend('<li>prepend list item</li>');
+			//$('.para1').appendTo('.para2');
+			//$('.para1').prependTo('.para2');
+			//$('ul').before('<h3>Before function is here:</h3>');
+			//$('ul').after('<h3>After function is here:</h3>');
+			//$('ul').empty();
+			//$('ul').detach();
+			//$('a').attr('target','_blank');
+			//alert($('a').attr('href'));
+			//$('a').removeAttr('target');
+			//$('p').wrap('<h1>');
+			//$('p').wrapAll('<h1>');
+//   INPUT AND STORE AT SCREEN
+			$('#newItem').keyup(function(e){
+				var code=e.which;
+				if(code==13){
+					e.preventDefault();
+					$('ul').append('<li>'+e.target.value+'</li>');
+				}
+			});
+/*
+			var myArray = ['Ahsan','Hamza','Ahmed','Robot'];
+			$.each(myArray,function(i,val){
+				//console.log(val);
+				$('#users').append('<li>'+val+'</li>');
+			});
+*/
+			var newarry=$('ul#list li').toArray();
+			//console.log(newarry);
+			$.each(newarry,function(i,val){
+				console.log(val.innerHTML)
+				//$('#users').append('<li>'+val+'</li>');
+			});
+		});
+
+	</script>
+</body>
+</html>
